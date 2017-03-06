@@ -8,7 +8,7 @@
   sudo: yes
   lineinfile:
     dest: /etc/hosts
-    line: "{{ansible_default_ipv4.address}}\t{{host_name}}\t{{host}}"
+    line: "{{ansible_default_ipv4.address}}\t{{host}}"
     regexp: "^{{ansible_default_ipv4.address}}.*"
     state: present
     insertafter: EOF
