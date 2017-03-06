@@ -1,0 +1,12 @@
+# /etc/bashrc
+#Common bash settings for all users
+
+#Customize bash prompt with the environment appended
+if [ $UID -eq 0 ]; then
+        PS1="[\u@\h.{{nvironment}} \W]#"
+else
+        PS1="[\u@\h.{{nvironment}} \W]$"
+fi
+
+#Set locale
+export LC_ALL=en_US.UTF-8

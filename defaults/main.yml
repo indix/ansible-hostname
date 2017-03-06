@@ -1,0 +1,11 @@
+---
+#host_name is set while spinning up a new machine in the add_host module
+host: "{{host_name | take(delimiter='.', start=0, end=1)}}"
+
+debian_bashrc_paths:
+  - "~/.bashrc"
+  - "/home/ubuntu/.bashrc"
+
+centos_bashrc_paths:
+  - "~/.bashrc"
+  - "/home/ec2-user/.bashrc"

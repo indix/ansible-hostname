@@ -1,0 +1,21 @@
+---
+- name: Set host name for the machine
+  sudo: yes
+  hostname:
+    name: "{{host}}"
+
+- name: Add hostname entry in /etc/hosts
+  sudo: yes
+  lineinfile:
+    dest: /etc/hosts
+    line: "{{ansible_default_ipv4.address}}\t{{host_name}}\t{{host}}"
+    regexp: "^{{ansible_default_ipv4.address}}.*"
+    state: present
+    insertafter: EOF
+    create: true
+
+- include: Debian.yml
+  when: ansible_os_family == "Debian"
+
+- include: CentOS.yml
+  when: ansible_distribution == "CentOS"
