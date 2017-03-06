@@ -13,9 +13,3 @@
     state: present
     insertafter: EOF
     create: true
-
-- include: Debian.yml
-  when: ansible_os_family == "Debian"
-
-- include: CentOS.yml
-  when: ansible_distribution == "CentOS"
