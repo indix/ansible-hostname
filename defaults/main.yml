@@ -1,6 +1,6 @@
 ---
-#host_name is set while spinning up a new machine in the add_host module
-host: "{{host_name | take(delimiter='.', start=0, end=1)}}"
+#Set this var as per your need
+host: "hostname-test"
 
 debian_bashrc_paths:
   - "~/.bashrc"
