@@ -1,0 +1,10 @@
+---
+
+galaxy_info:
+  author: "Indix"
+  license: MIT
+  min_ansible_version: 1.9
+  platforms:
+   - name: Ubuntu
+   - name: Centos
+dependencies: []
